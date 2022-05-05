@@ -2,9 +2,9 @@ import streamlit as st
 from pydataxm.pydataxm import ReadDB
 from streamlit_option_menu import option_menu
 
-from controller.MercadoController import MercadoController
-from model.Consulta import Consulta
-from model.Metrica import Metrica
+#from controller.MercadoController import MercadoController
+#from model.Consulta import Consulta
+#from model.Metrica import Metrica
 from view.AboutPartial import *
 
 
@@ -25,15 +25,15 @@ class MainView:
 
     def _inicialializar_layout(self):
         # Set page title, icon, layout wide (more used space in central area) and sidebar initial state
-        st.set_page_config(page_title="Análisis mercado energía", page_icon='', layout="wide",
+        st.set_page_config(page_title="Evaluación Proyectos de Grado - Posgrados", page_icon='', layout="wide",
                            initial_sidebar_state="expanded")
         # Defines the number of available columns del area principal
         self.col1, self.col2, self.col3 = st.columns([1, 1, 1])
 
         # Define lo que abrá en la barra de menu
         with st.sidebar:
-            self.menu_actual = option_menu("Menu", ["About", '[OtroMenu]Mi Menu'],
-                                           icons=['house', 'gear'], menu_icon="cast", default_index=1)
+            self.menu_actual = option_menu("Menu", ["About", 'Inicio'],
+                                           icons=['house', 'search'], menu_icon="cast", default_index=1)
 
     def ver_ejemplo(self):
         pass
@@ -55,4 +55,4 @@ class MainView:
 # Main call
 if __name__ == "__main__":
     gui = MainView()
-    gui.controlar_menu()
+    #gui.controlar_menu()
